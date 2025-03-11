@@ -1,5 +1,5 @@
 {
-  "name": "marlowe-doc",
+  "name": "my-website",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,35 +15,24 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.4.3",
-    "@docusaurus/plugin-content-docs": "^2.4.3",
-    "@docusaurus/plugin-content-pages": "^2.4.3",
-    "@docusaurus/preset-classic": "^2.4.3",
-    "@docusaurus/theme-classic": "^2.4.3",
-    "@docusaurus/theme-common": "^2.4.3",
-    "@docusaurus/theme-mermaid": "^2.4.3",
-    "@easyops-cn/docusaurus-search-local": "^0.36.0",
-    "@mdx-js/react": "^1.6.22",
-    "classnames": "^2.3.2",
-    "clsx": "^1.2.1",
-    "dayjs": "^1.11.10",
-    "docusaurus-plugin-sass": "^0.2.5",
-    "docusaurus-preset-openapi": "^0.6.4",
-    "path": "^0.12.7",
-    "path-browserify": "^1.0.1",
-    "posthog-js": "^1.83.1",
-    "prism-react-renderer": "^1.3.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.62.1",
-    "sass-loader": "^13.2.2",
-    "string_decoder": "^1.3.0",
-    "url": "^0.11.0"
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@easyops-cn/docusaurus-search-local": "^0.48.5",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "docusaurus-plugin-sass": "^0.2.6",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.85.1",
+    "sass-loader": "^16.0.5"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.4.1",
-    "@tsconfig/docusaurus": "^1.0.7",
-    "typescript": "^4.9.4"
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/tsconfig": "3.7.0",
+    "@docusaurus/types": "3.7.0",
+    "typescript": "~5.6.2"
   },
   "browserslist": {
     "production": [
@@ -52,13 +41,12 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
     ]
   },
   "engines": {
-    "node": ">=16.14"
-  },
-  "packageManager": "yarn@3.5.0"
+    "node": ">=18.0"
+  }
 }

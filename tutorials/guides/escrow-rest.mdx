@@ -318,7 +318,7 @@ If you want to create the contract in Marlowe Playground, do the following:
 7. Set the "Complaint response deadline" to three hours into the future.
 8. Set the "Mediation deadline" to four hours into the future.
 9. Set the "Price" to 75 ada.
-10. Select "Download as JSON", set the file name to "escrow-contract.json", and store the file in this folder, namely [marlowe-starter-kit/](.). Note that most interfaces for Jupyter notebooks allow one to drag and drop a file into their explorer panel.
+10. Select "Download as JSON", set the file name to "escrow-contract.json", and store the file in this folder. Note that most interfaces for Jupyter notebooks allow one to drag and drop a file into their explorer panel.
 
 ***Be careful setting the deadlines because, if these mistakenly are in the past or in the too-near future, then parts of the contract will time out and not operate as described in this tutorial.***
 
@@ -559,8 +559,9 @@ tags: {}
 EOI
 cat request-1.json
 ```
-
-    {"contract":{"timeout":1679665969000,"timeout_continuation":"close","when":[{"case":{"deposits":75000000,"into_account":{"role_token":"Seller"},"of_token":{"currency_symbol":"","token_name":""},"party":{"role_token":"Buyer"}},"then":{"timeout":1679669569000,"timeout_continuation":"close","when":[{"case":{"choose_between":[{"from":0,"to":0}],"for_choice":{"choice_name":"Everything is alright","choice_owner":{"role_token":"Buyer"}}},"then":"close"},{"case":{"choose_between":[{"from":1,"to":1}],"for_choice":{"choice_name":"Report problem","choice_owner":{"role_token":"Buyer"}}},"then":{"from_account":{"role_token":"Seller"},"pay":75000000,"then":{"timeout":1679673169000,"timeout_continuation":"close","when":[{"case":{"choose_between":[{"from":1,"to":1}],"for_choice":{"choice_name":"Confirm problem","choice_owner":{"role_token":"Seller"}}},"then":"close"},{"case":{"choose_between":[{"from":0,"to":0}],"for_choice":{"choice_name":"Dispute problem","choice_owner":{"role_token":"Seller"}}},"then":{"timeout":1679676769000,"timeout_continuation":"close","when":[{"case":{"choose_between":[{"from":0,"to":0}],"for_choice":{"choice_name":"Dismiss claim","choice_owner":{"role_token":"Mediator"}}},"then":{"from_account":{"role_token":"Buyer"},"pay":75000000,"then":"close","to":{"account":{"role_token":"Seller"}},"token":{"currency_symbol":"","token_name":""}}},{"case":{"choose_between":[{"from":1,"to":1}],"for_choice":{"choice_name":"Confirm claim","choice_owner":{"role_token":"Mediator"}}},"then":"close"}]}}]},"to":{"account":{"role_token":"Buyer"}},"token":{"currency_symbol":"","token_name":""}}}]}}]},"metadata":{},"minUTxODeposit":2000000,"roles":{"Buyer":"addr_test1vpy4n4peh4suv0y55yptur0066j5kds8r4ncnuzm0vpzfgg0dhz6d","Mediator":"addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv","Seller":"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck"},"tags":{},"version":"v1"}
+```json
+{"contract":{"timeout":1679665969000,"timeout_continuation":"close","when":[{"case":{"deposits":75000000,"into_account":{"role_token":"Seller"},"of_token":{"currency_symbol":"","token_name":""},"party":{"role_token":"Buyer"}},"then":{"timeout":1679669569000,"timeout_continuation":"close","when":[{"case":{"choose_between":[{"from":0,"to":0}],"for_choice":{"choice_name":"Everything is alright","choice_owner":{"role_token":"Buyer"}}},"then":"close"},{"case":{"choose_between":[{"from":1,"to":1}],"for_choice":{"choice_name":"Report problem","choice_owner":{"role_token":"Buyer"}}},"then":{"from_account":{"role_token":"Seller"},"pay":75000000,"then":{"timeout":1679673169000,"timeout_continuation":"close","when":[{"case":{"choose_between":[{"from":1,"to":1}],"for_choice":{"choice_name":"Confirm problem","choice_owner":{"role_token":"Seller"}}},"then":"close"},{"case":{"choose_between":[{"from":0,"to":0}],"for_choice":{"choice_name":"Dispute problem","choice_owner":{"role_token":"Seller"}}},"then":{"timeout":1679676769000,"timeout_continuation":"close","when":[{"case":{"choose_between":[{"from":0,"to":0}],"for_choice":{"choice_name":"Dismiss claim","choice_owner":{"role_token":"Mediator"}}},"then":{"from_account":{"role_token":"Buyer"},"pay":75000000,"then":"close","to":{"account":{"role_token":"Seller"}},"token":{"currency_symbol":"","token_name":""}}},{"case":{"choose_between":[{"from":1,"to":1}],"for_choice":{"choice_name":"Confirm claim","choice_owner":{"role_token":"Mediator"}}},"then":"close"}]}}]},"to":{"account":{"role_token":"Buyer"}},"token":{"currency_symbol":"","token_name":""}}}]}}]},"metadata":{},"minUTxODeposit":2000000,"roles":{"Buyer":"addr_test1vpy4n4peh4suv0y55yptur0066j5kds8r4ncnuzm0vpzfgg0dhz6d","Mediator":"addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv","Seller":"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck"},"tags":{},"version":"v1"}
+```
 
 
 Next we post the request and view the response.
@@ -982,8 +983,9 @@ tags: {}
 EOI
 cat request-2.json
 ```
-
+```json
     {"inputs":[{"input_from_party":{"role_token":"Buyer"},"into_account":{"role_token":"Seller"},"of_token":{"currency_symbol":"","token_name":""},"that_deposits":75000000}],"metadata":{},"tags":{},"version":"v1"}
+```
 
 
 Next we post the request and store the response.
@@ -1254,9 +1256,9 @@ tags: {}
 EOI
 cat request-3.json
 ```
-
-    {"inputs":[{"for_choice_id":{"choice_name":"Report problem","choice_owner":{"role_token":"Buyer"}},"input_that_chooses_num":1}],"metadata":{},"tags":{},"version":"v1"}
-
+```json
+{"inputs":[{"for_choice_id":{"choice_name":"Report problem","choice_owner":{"role_token":"Buyer"}},"input_that_chooses_num":1}],"metadata":{},"tags":{},"version":"v1"}
+```
 
 Next we post the request and store the response.
 
@@ -1271,16 +1273,16 @@ curl "$CONTRACT_URL/transactions" \
   -sS
 json2yaml response-3.json
 ```
-
-    links:
-      transaction: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
-    resource:
-      contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      transactionId: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
-      txBody:
-        cborHex: 86aa00838258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526008258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526018258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526020d818258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d5260012818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd010183a200581d604959d439bd61c63c94a102be0defd6a54b36071d6789f05b7b0224a1011a370a9baea300581d702ed2631dbb277c84334453c5c437b86325d371f0835a28b910a91a6e011a0496ed400282005820859a9bb208ab9beed6c6d75f9c5da732f41f52fe9748d1d79931daaa28c5e989a200581d604959d439bd61c63c94a102be0defd6a54b36071d6789f05b7b0224a101821a000fb7caa1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a14542757965720110a200581d604959d439bd61c63c94a102be0defd6a54b36071d6789f05b7b0224a1011a3704953e111a00121350021a000c0ce0031a016e00c1081a016de7810b5820b55acbee3f5bc9fbe498a9044169e4d1ee1ac2f7853fbb73d134117451990ad79fff82d8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a1d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01a01b0000018713b903e8ffd87c9f9fd8799fd87a9fd8799f4f436f6e6669726d2070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0101ffffffd87980ffd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0000ffffffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffffff1b0000018714529468d87980ffffd8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f4653656c6c6572ffd8799f4040ffff1a047868c0a0a01b0000018713b63910ffd87c9f9fd8799fd87a9fd8799f5545766572797468696e6720697320616c7269676874d87a9f454275796572ffff9fd8799f0000ffffffd87980ffd8799fd87a9fd8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff9fd8799f0101ffffffd87a9fd87a9f4653656c6c6572ffd8799fd87a9f454275796572ffffd8799f4040ffd87a9f1a047868c0ffd87c9f9fd8799fd87a9fd8799f4f436f6e6669726d2070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0101ffffffd87980ffd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0000ffffffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffffff1b0000018714529468d87980ffffffff1b00000187141ba5e8d87980ffff818400019fd8799fd87a9fd8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01ffffff821a006d3cae1a70de7f55f5f6
-        description: ''
-        type: TxBodyBabbage
+```yaml
+  links:
+    transaction: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
+  resource:
+    contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+    transactionId: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
+    txBody:
+      cborHex: 86aa00838258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526008258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526018258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526020d818258205c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d5260012818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd010183a200581d604959d439bd61c63c94a102be0defd6a54b36071d6789f05b7b0224a1011a370a9baea300581d702ed2631dbb277c84334453c5c437b86325d371f0835a28b910a91a6e011a0496ed400282005820859a9bb208ab9beed6c6d75f9c5da732f41f52fe9748d1d79931daaa28c5e989a200581d604959d439bd61c63c94a102be0defd6a54b36071d6789f05b7b0224a101821a000fb7caa1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a14542757965720110a200581d604959d439bd61c63c94a102be0defd6a54b36071d6789f05b7b0224a1011a3704953e111a00121350021a000c0ce0031a016e00c1081a016de7810b5820b55acbee3f5bc9fbe498a9044169e4d1ee1ac2f7853fbb73d134117451990ad79fff82d8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a1d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01a01b0000018713b903e8ffd87c9f9fd8799fd87a9fd8799f4f436f6e6669726d2070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0101ffffffd87980ffd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0000ffffffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffffff1b0000018714529468d87980ffffd8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f4653656c6c6572ffd8799f4040ffff1a047868c0a0a01b0000018713b63910ffd87c9f9fd8799fd87a9fd8799f5545766572797468696e6720697320616c7269676874d87a9f454275796572ffff9fd8799f0000ffffffd87980ffd8799fd87a9fd8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff9fd8799f0101ffffffd87a9fd87a9f4653656c6c6572ffd8799fd87a9f454275796572ffffd8799f4040ffd87a9f1a047868c0ffd87c9f9fd8799fd87a9fd8799f4f436f6e6669726d2070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0101ffffffd87980ffd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0000ffffffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffffff1b0000018714529468d87980ffffffff1b00000187141ba5e8d87980ffff818400019fd8799fd87a9fd8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01ffffff821a006d3cae1a70de7f55f5f6
+      description: ''
+      type: TxBodyBabbage
 
 
 Once again, use `marlowe-cli` to submit the transaction and then wait for confirmation.
@@ -1294,15 +1296,15 @@ jq '.resource.txBody' response-3.json > tx-3.unsigned
 ```bash
 TX_3=$(
 marlowe-cli transaction submit \
-  --tx-body-file tx-3.unsigned \
-  --required-signer "$BUYER_SKEY" \
-  --timeout 600 \
+--tx-body-file tx-3.unsigned \
+--required-signer "$BUYER_SKEY" \
+--timeout 600 \
 | sed -e 's/^TxId "\(.*\)"$/\1/' \
 )
 echo "TX_3 = $TX_3"
 ```
 
-    TX_3 = 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
+  TX_3 = 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
 
 
 One can view the transaction on a Cardano explorer. It sometimes takes thirty seconds or so for the transaction to be visible in an explorer.
@@ -1312,7 +1314,7 @@ One can view the transaction on a Cardano explorer. It sometimes takes thirty se
 echo "$EXPLORER_URL"/transaction/"$TX_3?tab=utxo"
 ```
 
-    https://preprod.cardanoscan.io/transaction/3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d?tab=utxo
+  https://preprod.cardanoscan.io/transaction/3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d?tab=utxo
 
 
 One can see that the buyer still has approximately 75 ada less than originally.
@@ -1322,10 +1324,10 @@ One can see that the buyer still has approximately 75 ada less than originally.
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --address "$BUYER_ADDR"
 ```
 
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d     0        923442094 lovelace + TxOutDatumNone
-    3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d     2        1030090 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.4275796572 + TxOutDatumNone
+                             TxHash                                 TxIx        Amount
+  --------------------------------------------------------------------------------------
+  3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d     0        923442094 lovelace + TxOutDatumNone
+  3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d     2        1030090 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.4275796572 + TxOutDatumNone
 
 
 The Marlowe contract still has the 77 ada.
@@ -1335,9 +1337,9 @@ The Marlowe contract still has the 77 ada.
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --tx-in "$TX_3#1"
 ```
 
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d     1        77000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "859a9bb208ab9beed6c6d75f9c5da732f41f52fe9748d1d79931daaa28c5e989"
+                             TxHash                                 TxIx        Amount
+  --------------------------------------------------------------------------------------
+  3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d     1        77000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "859a9bb208ab9beed6c6d75f9c5da732f41f52fe9748d1d79931daaa28c5e989"
 
 
 ## View the further progress of the contract on the blockchain
@@ -1349,101 +1351,101 @@ Marlowe Runtime\'s `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{
 curl -sS "$CONTRACT_URL"/transactions/"$TX_3" | json2yaml
 ```
 
-    links:
-      previous: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/5c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526
-    resource:
-      block:
-        blockHeaderHash: 9515113e25d5a06d194f7a1946ec0a0ab31c3410e0a36cb6ffe065531598b583
-        blockNo: 757387
-        slotNo: 23979937
-      consumingTx: null
-      continuations: null
-      contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      inputUtxo: 5c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526#1
-      inputs:
-      - for_choice_id:
-          choice_name: Report problem
+  links:
+    previous: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/5c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526
+  resource:
+    block:
+      blockHeaderHash: 9515113e25d5a06d194f7a1946ec0a0ab31c3410e0a36cb6ffe065531598b583
+      blockNo: 757387
+      slotNo: 23979937
+    consumingTx: null
+    continuations: null
+    contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+    inputUtxo: 5c45ab6080a4b5bf47474e0e3eac6ff54a93737fa25ce9c0997b30a51fc4d526#1
+    inputs:
+    - for_choice_id:
+        choice_name: Report problem
+        choice_owner:
+          role_token: Buyer
+      input_that_chooses_num: 1
+    invalidBefore: 2023-03-24T13:05:05Z
+    invalidHereafter: 2023-03-24T14:52:49Z
+    metadata: {}
+    outputContract:
+      timeout: 1679673169000
+      timeout_continuation: close
+      when:
+      - case:
+          choose_between:
+          - from: 1
+            to: 1
+          for_choice:
+            choice_name: Confirm problem
+            choice_owner:
+              role_token: Seller
+        then: close
+      - case:
+          choose_between:
+          - from: 0
+            to: 0
+          for_choice:
+            choice_name: Dispute problem
+            choice_owner:
+              role_token: Seller
+        then:
+          timeout: 1679676769000
+          timeout_continuation: close
+          when:
+          - case:
+              choose_between:
+              - from: 0
+                to: 0
+              for_choice:
+                choice_name: Dismiss claim
+                choice_owner:
+                  role_token: Mediator
+            then:
+              from_account:
+                role_token: Buyer
+              pay: 75000000
+              then: close
+              to:
+                account:
+                  role_token: Seller
+              token:
+                currency_symbol: ''
+                token_name: ''
+          - case:
+              choose_between:
+              - from: 1
+                to: 1
+              for_choice:
+                choice_name: Confirm claim
+                choice_owner:
+                  role_token: Mediator
+            then: close
+    outputState:
+      accounts:
+      - - - address: addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv
+          - currency_symbol: ''
+            token_name: ''
+        - 2000000
+      - - - role_token: Buyer
+          - currency_symbol: ''
+            token_name: ''
+        - 75000000
+      boundValues: []
+      choices:
+      - - choice_name: Report problem
           choice_owner:
             role_token: Buyer
-        input_that_chooses_num: 1
-      invalidBefore: 2023-03-24T13:05:05Z
-      invalidHereafter: 2023-03-24T14:52:49Z
-      metadata: {}
-      outputContract:
-        timeout: 1679673169000
-        timeout_continuation: close
-        when:
-        - case:
-            choose_between:
-            - from: 1
-              to: 1
-            for_choice:
-              choice_name: Confirm problem
-              choice_owner:
-                role_token: Seller
-          then: close
-        - case:
-            choose_between:
-            - from: 0
-              to: 0
-            for_choice:
-              choice_name: Dispute problem
-              choice_owner:
-                role_token: Seller
-          then:
-            timeout: 1679676769000
-            timeout_continuation: close
-            when:
-            - case:
-                choose_between:
-                - from: 0
-                  to: 0
-                for_choice:
-                  choice_name: Dismiss claim
-                  choice_owner:
-                    role_token: Mediator
-              then:
-                from_account:
-                  role_token: Buyer
-                pay: 75000000
-                then: close
-                to:
-                  account:
-                    role_token: Seller
-                token:
-                  currency_symbol: ''
-                  token_name: ''
-            - case:
-                choose_between:
-                - from: 1
-                  to: 1
-                for_choice:
-                  choice_name: Confirm claim
-                  choice_owner:
-                    role_token: Mediator
-              then: close
-      outputState:
-        accounts:
-        - - - address: addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv
-            - currency_symbol: ''
-              token_name: ''
-          - 2000000
-        - - - role_token: Buyer
-            - currency_symbol: ''
-              token_name: ''
-          - 75000000
-        boundValues: []
-        choices:
-        - - choice_name: Report problem
-            choice_owner:
-              role_token: Buyer
-          - 1
-        minTime: 1679663105000
-      outputUtxo: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d#1
-      status: confirmed
-      tags: {}
-      transactionId: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
-      txBody: null
+        - 1
+      minTime: 1679663105000
+    outputUtxo: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d#1
+    status: confirmed
+    tags: {}
+    transactionId: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
+    txBody: null
 
 
 ## Transaction 4: The Seller Disputes that There is a Problem
@@ -1453,18 +1455,18 @@ Now the seller chooses to dispute that there is a problem with the merchandise.
 
 ```bash
 marlowe-cli input choose \
-  --choice-name "Dispute problem" \
-  --choice-party Seller \
-  --choice-number 0 \
-  --out-file input-4.json
+--choice-name "Dispute problem" \
+--choice-party Seller \
+--choice-number 0 \
+--out-file input-4.json
 json2yaml input-4.json
 ```
 
-    for_choice_id:
-      choice_name: Dispute problem
-      choice_owner:
-        role_token: Seller
-    input_that_chooses_num: 0
+  for_choice_id:
+    choice_name: Dispute problem
+    choice_owner:
+      role_token: Seller
+  input_that_chooses_num: 0
 
 
 
@@ -1477,8 +1479,9 @@ tags: {}
 EOI
 cat request-4.json
 ```
-
-    {"inputs":[{"for_choice_id":{"choice_name":"Dispute problem","choice_owner":{"role_token":"Seller"}},"input_that_chooses_num":0}],"metadata":{},"tags":{},"version":"v1"}
+```json
+{"inputs":[{"for_choice_id":{"choice_name":"Dispute problem","choice_owner":{"role_token":"Seller"}},"input_that_chooses_num":0}],"metadata":{},"tags":{},"version":"v1"}
+```
 
 
 Next we post the request and store the response.
@@ -1486,24 +1489,24 @@ Next we post the request and store the response.
 
 ```bash
 curl "$CONTRACT_URL/transactions" \
-  -X POST \
-  -H 'Content-Type: application/json' \
-  -H "X-Change-Address: $SELLER_ADDR" \
-  -d @request-4.json \
-  -o response-4.json \
-  -sS
+-X POST \
+-H 'Content-Type: application/json' \
+-H "X-Change-Address: $SELLER_ADDR" \
+-d @request-4.json \
+-o response-4.json \
+-sS
 json2yaml response-4.json
 ```
 
-    links:
-      transaction: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
-    resource:
-      contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      transactionId: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
-      txBody:
-        cborHex: 86aa00838258203a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d01825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c04825820f2d8203e5e72830c22f7cc6ea9faeeda1ccc07bb6be203ec36dc6d99723bcfa4010d81825820f2d8203e5e72830c22f7cc6ea9faeeda1ccc07bb6be203ec36dc6d99723bcfa40112818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd010183a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a3b900d4aa300581d702ed2631dbb277c84334453c5c437b86325d371f0835a28b910a91a6e011a0496ed400282005820b9755884ecbd03f8a11bb6b8107dafa2c21d42eeff45d46a7989e162714ee6fda200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc5901821a000fc8a0a1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a14653656c6c65720110a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a3b8aaeef111a00101b11021a000abcb6031a016e0ed1081a016de81a0b5820ea3dc452aa2c594565b8cb0adbe5cf8b74beb9318c8199e2daec18073a9ac9699fff82d8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a1d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01a01b0000018713b903e8ffd87c9f9fd8799fd87a9fd8799f4f436f6e6669726d2070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0101ffffffd87980ffd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0000ffffffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffffff1b0000018714529468d87980ffffd8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a2d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01d8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff00a01b0000018713bb5990ffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffff818400009fd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff00ffffff821a005e26321a60a38b52f5f6
-        description: ''
-        type: TxBodyBabbage
+  links:
+    transaction: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
+  resource:
+    contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+    transactionId: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
+    txBody:
+      cborHex: 86aa00838258203a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d01825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c04825820f2d8203e5e72830c22f7cc6ea9faeeda1ccc07bb6be203ec36dc6d99723bcfa4010d81825820f2d8203e5e72830c22f7cc6ea9faeeda1ccc07bb6be203ec36dc6d99723bcfa40112818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd010183a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a3b900d4aa300581d702ed2631dbb277c84334453c5c437b86325d371f0835a28b910a91a6e011a0496ed400282005820b9755884ecbd03f8a11bb6b8107dafa2c21d42eeff45d46a7989e162714ee6fda200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc5901821a000fc8a0a1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a14653656c6c65720110a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a3b8aaeef111a00101b11021a000abcb6031a016e0ed1081a016de81a0b5820ea3dc452aa2c594565b8cb0adbe5cf8b74beb9318c8199e2daec18073a9ac9699fff82d8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a1d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01a01b0000018713b903e8ffd87c9f9fd8799fd87a9fd8799f4f436f6e6669726d2070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0101ffffffd87980ffd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff9fd8799f0000ffffffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffffff1b0000018714529468d87980ffffd8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a2d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01d8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff00a01b0000018713bb5990ffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffff818400009fd8799fd87a9fd8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff00ffffff821a005e26321a60a38b52f5f6
+      description: ''
+      type: TxBodyBabbage
 
 
 Once again, use `marlowe-cli` to submit the transaction and then wait for confirmation.
@@ -1517,15 +1520,15 @@ jq '.resource.txBody' response-4.json > tx-4.unsigned
 ```bash
 TX_4=$(
 marlowe-cli transaction submit \
-  --tx-body-file tx-4.unsigned \
-  --required-signer "$SELLER_SKEY" \
-  --timeout 600 \
+--tx-body-file tx-4.unsigned \
+--required-signer "$SELLER_SKEY" \
+--timeout 600 \
 | sed -e 's/^TxId "\(.*\)"$/\1/' \
 )
 echo "TX_4 = $TX_4"
 ```
 
-    TX_4 = 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
+  TX_4 = 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
 
 
 One can view the transaction on a Cardano explorer. It sometimes takes thirty seconds or so for the transaction to be visible in an explorer.
@@ -1535,7 +1538,7 @@ One can view the transaction on a Cardano explorer. It sometimes takes thirty se
 echo "$EXPLORER_URL"/transaction/"$TX_4?tab=utxo"
 ```
 
-    https://preprod.cardanoscan.io/transaction/87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894?tab=utxo
+  https://preprod.cardanoscan.io/transaction/87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894?tab=utxo
 
 
 One can see that the seller still has approximately their original balance.
@@ -1545,10 +1548,10 @@ One can see that the seller still has approximately their original balance.
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --address "$SELLER_ADDR"
 ```
 
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894     0        999296330 lovelace + TxOutDatumNone
-    87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894     2        1034400 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.53656c6c6572 + TxOutDatumNone
+                             TxHash                                 TxIx        Amount
+  --------------------------------------------------------------------------------------
+  87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894     0        999296330 lovelace + TxOutDatumNone
+  87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894     2        1034400 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.53656c6c6572 + TxOutDatumNone
 
 
 The Marlowe contract still has the 77 ada.
@@ -1558,9 +1561,9 @@ The Marlowe contract still has the 77 ada.
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --tx-in "$TX_4#1"
 ```
 
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894     1        77000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "b9755884ecbd03f8a11bb6b8107dafa2c21d42eeff45d46a7989e162714ee6fd"
+                             TxHash                                 TxIx        Amount
+  --------------------------------------------------------------------------------------
+  87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894     1        77000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "b9755884ecbd03f8a11bb6b8107dafa2c21d42eeff45d46a7989e162714ee6fd"
 
 
 ## View the further progress of the contract on the blockchain
@@ -1572,84 +1575,84 @@ Marlowe Runtime\'s `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{
 curl -sS "$CONTRACT_URL"/transactions/"$TX_4" | json2yaml
 ```
 
-    links:
-      previous: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
-    resource:
-      block:
-        blockHeaderHash: 063ba9b171e7c3f716a6efb4fa3c5a4a9846d4415d4ec3c36200cdac884603cd
-        blockNo: 757396
-        slotNo: 23980134
-      consumingTx: null
-      continuations: null
-      contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      inputUtxo: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d#1
-      inputs:
-      - for_choice_id:
-          choice_name: Dispute problem
+  links:
+    previous: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d
+  resource:
+    block:
+      blockHeaderHash: 063ba9b171e7c3f716a6efb4fa3c5a4a9846d4415d4ec3c36200cdac884603cd
+      blockNo: 757396
+      slotNo: 23980134
+    consumingTx: null
+    continuations: null
+    contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+    inputUtxo: 3a7ffde61ba8e1a2281e1a165f42901b302cc3eb2ad122e7f7396f1807e85a7d#1
+    inputs:
+    - for_choice_id:
+        choice_name: Dispute problem
+        choice_owner:
+          role_token: Seller
+      input_that_chooses_num: 0
+    invalidBefore: 2023-03-24T13:07:38Z
+    invalidHereafter: 2023-03-24T15:52:49Z
+    metadata: {}
+    outputContract:
+      timeout: 1679676769000
+      timeout_continuation: close
+      when:
+      - case:
+          choose_between:
+          - from: 0
+            to: 0
+          for_choice:
+            choice_name: Dismiss claim
+            choice_owner:
+              role_token: Mediator
+        then:
+          from_account:
+            role_token: Buyer
+          pay: 75000000
+          then: close
+          to:
+            account:
+              role_token: Seller
+          token:
+            currency_symbol: ''
+            token_name: ''
+      - case:
+          choose_between:
+          - from: 1
+            to: 1
+          for_choice:
+            choice_name: Confirm claim
+            choice_owner:
+              role_token: Mediator
+        then: close
+    outputState:
+      accounts:
+      - - - address: addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv
+          - currency_symbol: ''
+            token_name: ''
+        - 2000000
+      - - - role_token: Buyer
+          - currency_symbol: ''
+            token_name: ''
+        - 75000000
+      boundValues: []
+      choices:
+      - - choice_name: Report problem
+          choice_owner:
+            role_token: Buyer
+        - 1
+      - - choice_name: Dispute problem
           choice_owner:
             role_token: Seller
-        input_that_chooses_num: 0
-      invalidBefore: 2023-03-24T13:07:38Z
-      invalidHereafter: 2023-03-24T15:52:49Z
-      metadata: {}
-      outputContract:
-        timeout: 1679676769000
-        timeout_continuation: close
-        when:
-        - case:
-            choose_between:
-            - from: 0
-              to: 0
-            for_choice:
-              choice_name: Dismiss claim
-              choice_owner:
-                role_token: Mediator
-          then:
-            from_account:
-              role_token: Buyer
-            pay: 75000000
-            then: close
-            to:
-              account:
-                role_token: Seller
-            token:
-              currency_symbol: ''
-              token_name: ''
-        - case:
-            choose_between:
-            - from: 1
-              to: 1
-            for_choice:
-              choice_name: Confirm claim
-              choice_owner:
-                role_token: Mediator
-          then: close
-      outputState:
-        accounts:
-        - - - address: addr_test1vr6tytqs3x8qgewhw89m3xrz58t3tqu2hfsecw0u06lf3hg052wsv
-            - currency_symbol: ''
-              token_name: ''
-          - 2000000
-        - - - role_token: Buyer
-            - currency_symbol: ''
-              token_name: ''
-          - 75000000
-        boundValues: []
-        choices:
-        - - choice_name: Report problem
-            choice_owner:
-              role_token: Buyer
-          - 1
-        - - choice_name: Dispute problem
-            choice_owner:
-              role_token: Seller
-          - 0
-        minTime: 1679663258000
-      outputUtxo: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894#1
-      status: confirmed
-      tags: {}
-      transactionId: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
-      txBody: null
+        - 0
+      minTime: 1679663258000
+    outputUtxo: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894#1
+    status: confirmed
+    tags: {}
+    transactionId: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
+    txBody: null
 
 
 ## Transaction 5: The Mediator Dismisses the Claim
@@ -1659,18 +1662,18 @@ The mediator rules in favor or the seller and dismisses the buyer's claim.
 
 ```bash
 marlowe-cli input choose \
-  --choice-name "Dismiss claim" \
-  --choice-party Mediator \
-  --choice-number 0 \
-  --out-file input-5.json
+--choice-name "Dismiss claim" \
+--choice-party Mediator \
+--choice-number 0 \
+--out-file input-5.json
 json2yaml input-5.json
 ```
 
-    for_choice_id:
-      choice_name: Dismiss claim
-      choice_owner:
-        role_token: Mediator
-    input_that_chooses_num: 0
+  for_choice_id:
+    choice_name: Dismiss claim
+    choice_owner:
+      role_token: Mediator
+  input_that_chooses_num: 0
 
 
 
@@ -1683,34 +1686,34 @@ tags: {}
 EOI
 cat request-5.json
 ```
-
-    {"inputs":[{"for_choice_id":{"choice_name":"Dismiss claim","choice_owner":{"role_token":"Mediator"}},"input_that_chooses_num":0}],"metadata":{},"tags":{},"version":"v1"}
-
+```json
+{"inputs":[{"for_choice_id":{"choice_name":"Dismiss claim","choice_owner":{"role_token":"Mediator"}},"input_that_chooses_num":0}],"metadata":{},"tags":{},"version":"v1"}
+```
 
 Next we post the request and store the response.
 
 
 ```bash
 curl "$CONTRACT_URL/transactions" \
-  -X POST \
-  -H 'Content-Type: application/json' \
-  -H "X-Change-Address: $MEDIATOR_ADDR" \
-  -d @request-5.json \
-  -o response-5.json \
-  -sS
+-X POST \
+-H 'Content-Type: application/json' \
+-H "X-Change-Address: $MEDIATOR_ADDR" \
+-d @request-5.json \
+-o response-5.json \
+-sS
 json2yaml response-5.json
 ```
-
-    links:
-      transaction: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
-    resource:
-      contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      transactionId: e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
-      txBody:
-        cborHex: 86aa008382582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f8489401825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c00825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c030d81825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c0012818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd010184a200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd011a3b39ea31a200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd01821a000fea4ca1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a1484d65646961746f7201a300581d70e165610232235bbbbeff5b998b233daae42979dec92a6722d9cda989011a047868c002820058203d3d354ce405bd517f65eb8b2905e8da5ab74845fabddd149d8fc8f173bdce3fa200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd011a001e848010a200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd011a3b340eb0111a00119282021a000bb701031a016e1ce1081a016de8660b5820b5af057eb94f5769f30290540e94314e2c3e566153b34eb455d465b5c691d47e9fff82d8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd80310724653656c6c6572ffd8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a2d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01d8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff00a01b0000018713bb5990ffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffff818400009fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff00ffffff821a006eb82c1a6f28ce7df5f6
-        description: ''
-        type: TxBodyBabbage
-
+```yaml
+links:
+  transaction: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
+resource:
+  contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+  transactionId: e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
+  txBody:
+    cborHex: 86aa008382582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f8489401825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c00825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c030d81825820b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c0012818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd010184a200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd011a3b39ea31a200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd01821a000fea4ca1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a1484d65646961746f7201a300581d70e165610232235bbbbeff5b998b233daae42979dec92a6722d9cda989011a047868c002820058203d3d354ce405bd517f65eb8b2905e8da5ab74845fabddd149d8fc8f173bdce3fa200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd011a001e848010a200581d60f4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98dd011a3b340eb0111a00119282021a000bb701031a016e1ce1081a016de8660b5820b5af057eb94f5769f30290540e94314e2c3e566153b34eb455d465b5c691d47e9fff82d8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd80310724653656c6c6572ffd8799fd8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072ffd8799fa2d8799fd8799fd87980d8799fd8799f581cf4b22c10898e0465d771cbb89862a1d715838aba619c39fc7ebe98ddffd87a80ffffd8799f4040ffff1a001e8480d8799fd87a9f454275796572ffd8799f4040ffff1a047868c0a2d8799f4e5265706f72742070726f626c656dd87a9f454275796572ffff01d8799f4f446973707574652070726f626c656dd87a9f4653656c6c6572ffff00a01b0000018713bb5990ffd87c9f9fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff9fd8799f0000ffffffd87a9fd87a9f454275796572ffd8799fd87a9f4653656c6c6572ffffd8799f4040ffd87a9f1a047868c0ffd87980ffffd8799fd87a9fd8799f4d436f6e6669726d20636c61696dd87a9f484d65646961746f72ffff9fd8799f0101ffffffd87980ffff1b00000187148982e8d87980ffff818400009fd8799fd87a9fd8799f4d4469736d69737320636c61696dd87a9f484d65646961746f72ffff00ffffff821a006eb82c1a6f28ce7df5f6
+    description: ''
+    type: TxBodyBabbage
+```
 
 Once again, use `marlowe-cli` to submit the transaction and then wait for confirmation.
 
@@ -1719,19 +1722,19 @@ Once again, use `marlowe-cli` to submit the transaction and then wait for confir
 jq '.resource.txBody' response-5.json > tx-5.unsigned
 ```
 
-
 ```bash
 TX_5=$(
 marlowe-cli transaction submit \
-  --tx-body-file tx-5.unsigned \
-  --required-signer "$MEDIATOR_SKEY" \
-  --timeout 600 \
+--tx-body-file tx-5.unsigned \
+--required-signer "$MEDIATOR_SKEY" \
+--timeout 600 \
 | sed -e 's/^TxId "\(.*\)"$/\1/' \
 )
 echo "TX_5 = $TX_5"
 ```
-
-    TX_5 = e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
+```txt
+TX_5 = e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
+```
 
 
 One can view the transaction on a Cardano explorer. It sometimes takes thirty seconds or so for the transaction to be visible in an explorer.
@@ -1740,9 +1743,9 @@ One can view the transaction on a Cardano explorer. It sometimes takes thirty se
 ```bash
 echo "$EXPLORER_URL"/transaction/"$TX_5?tab=utxo"
 ```
-
-    https://preprod.cardanoscan.io/transaction/e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b?tab=utxo
-
+```txt
+https://preprod.cardanoscan.io/transaction/e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b?tab=utxo
+```
 
 One can see that the mediator still has approximately their original balance, which includes the 2 ada they just received, refunding the 2 ada they used to create the contract.
 
@@ -1750,13 +1753,13 @@ One can see that the mediator still has approximately their original balance, wh
 ```bash
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --address "$MEDIATOR_ADDR"
 ```
-
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     0        993651249 lovelace + TxOutDatumNone
-    e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     1        1043020 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.4d65646961746f72 + TxOutDatumNone
-    e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     3        2000000 lovelace + TxOutDatumNone
-
+```txt
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     0        993651249 lovelace + TxOutDatumNone
+e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     1        1043020 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.4d65646961746f72 + TxOutDatumNone
+e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     3        2000000 lovelace + TxOutDatumNone
+```
 
 The Marlowe contract is closed, but the role-payout address has the 75 ada for the benefit of the seller.
 
@@ -1764,10 +1767,11 @@ The Marlowe contract is closed, but the role-payout address has the 75 ada for t
 ```bash
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --tx-in "$TX_5#2"
 ```
-
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     2        75000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "3d3d354ce405bd517f65eb8b2905e8da5ab74845fabddd149d8fc8f173bdce3f"
+```txt
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b     2        75000000 lovelace + TxOutDatumHash ScriptDataInBabbageEra "3d3d354ce405bd517f65eb8b2905e8da5ab74845fabddd149d8fc8f173bdce3f"
+```
 
 
 ## View the further progress of the contract on the blockchain
@@ -1778,35 +1782,35 @@ Marlowe Runtime\'s `HTTP` `GET` endpoint `/contracts/{contractId}/transactions/{
 ```bash
 curl -sS "$CONTRACT_URL"/transactions/"$TX_5" | json2yaml
 ```
-
-    links:
-      previous: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
-    resource:
-      block:
-        blockHeaderHash: cdf51d3a8faf28d28deb942712e0ab6e720e29dad4d07cb6701fa5a1d03d08fa
-        blockNo: 757399
-        slotNo: 23980215
-      consumingTx: null
-      continuations: null
-      contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      inputUtxo: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894#1
-      inputs:
-      - for_choice_id:
-          choice_name: Dismiss claim
-          choice_owner:
-            role_token: Mediator
-        input_that_chooses_num: 0
-      invalidBefore: 2023-03-24T13:08:54Z
-      invalidHereafter: 2023-03-24T16:52:49Z
-      metadata: {}
-      outputContract: null
-      outputState: null
-      outputUtxo: null
-      status: confirmed
-      tags: {}
-      transactionId: e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
-      txBody: null
-
+```yaml
+links:
+  previous: contracts/b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c%231/transactions/87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894
+resource:
+  block:
+    blockHeaderHash: cdf51d3a8faf28d28deb942712e0ab6e720e29dad4d07cb6701fa5a1d03d08fa
+    blockNo: 757399
+    slotNo: 23980215
+  consumingTx: null
+  continuations: null
+  contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+  inputUtxo: 87dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f84894#1
+  inputs:
+  - for_choice_id:
+      choice_name: Dismiss claim
+      choice_owner:
+        role_token: Mediator
+    input_that_chooses_num: 0
+  invalidBefore: 2023-03-24T13:08:54Z
+  invalidHereafter: 2023-03-24T16:52:49Z
+  metadata: {}
+  outputContract: null
+  outputState: null
+  outputUtxo: null
+  status: confirmed
+  tags: {}
+  transactionId: e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b
+  txBody: null
+```
 
 ## Transaction 6: The Seller Withdraws Their Funds
 
@@ -1820,33 +1824,33 @@ role: Seller
 EOI
 cat request-6.json
 ```
-
-    {"contractId":"b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1","role":"Seller"}
-
+```json
+{"contractId":"b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1","role":"Seller"}
+```
 
 Next we post the request and store the response.
 
 
 ```bash
 curl "$MARLOWE_RT_WEBSERVER_URL/withdrawals" \
-  -X POST \
-  -H 'Content-Type: application/json' \
-  -H "X-Change-Address: $SELLER_ADDR" \
-  -d @request-6.json \
-  -o response-6.json \
-  -sS
+-X POST \
+-H 'Content-Type: application/json' \
+-H "X-Change-Address: $SELLER_ADDR" \
+-d @request-6.json \
+-o response-6.json \
+-sS
 json2yaml response-6.json
 ```
-
-    links:
-      withdrawal: withdrawals/eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
-    resource:
-      txBody:
-        cborHex: 86a8008382582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f848940082582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f8489402825820e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b020d8182582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f848940012818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd020182a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a400366e8a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc5901821a000fc8a0a1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a14653656c6c65720110a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a3b887697111a000796b3021a00050f220b5820a5258d13cd3370afa84e2dc060cd7abc854b78da1be057ffb889445f5005e4a59fff81d8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd80310724653656c6c6572ff81840002d87980821a001b8ea21a1df5686ff5f6
-        description: ''
-        type: TxBodyBabbage
-      withdrawalId: eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
-
+```yaml
+links:
+  withdrawal: withdrawals/eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
+resource:
+  txBody:
+    cborHex: 86a8008382582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f848940082582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f8489402825820e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b020d8182582087dba73e0145b13004602c17eb71c3a9a3a9d26760179a41df9f0c0b71f848940012818258209a8a6f387a3330b4141e1cb019380b9ac5c72151c0abc52aa4266245d3c555cd020182a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a400366e8a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc5901821a000fc8a0a1581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072a14653656c6c65720110a200581d601b120d7221aa5e7db58fd8e0753e156cf8c38742546a907e8104cc59011a3b887697111a000796b3021a00050f220b5820a5258d13cd3370afa84e2dc060cd7abc854b78da1be057ffb889445f5005e4a59fff81d8799f581c03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd80310724653656c6c6572ff81840002d87980821a001b8ea21a1df5686ff5f6
+    description: ''
+    type: TxBodyBabbage
+  withdrawalId: eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
+```
 
 Once again, use `marlowe-cli` to submit the transaction and then wait for confirmation.
 
@@ -1855,20 +1859,19 @@ Once again, use `marlowe-cli` to submit the transaction and then wait for confir
 jq '.resource.txBody' response-6.json > tx-6.unsigned
 ```
 
-
 ```bash
 TX_6=$(
 marlowe-cli transaction submit \
-  --tx-body-file tx-6.unsigned \
-  --required-signer "$SELLER_SKEY" \
-  --timeout 600 \
+--tx-body-file tx-6.unsigned \
+--required-signer "$SELLER_SKEY" \
+--timeout 600 \
 | sed -e 's/^TxId "\(.*\)"$/\1/' \
 )
 echo "TX_6 = $TX_6"
 ```
-
-    TX_6 = eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
-
+```txt
+TX_6 = eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
+```
 
 On can view the transaction on a Cardano explorer. It sometimes takes thirty seconds or so for the transaction to be visible in an explorer.
 
@@ -1876,9 +1879,9 @@ On can view the transaction on a Cardano explorer. It sometimes takes thirty sec
 ```bash
 echo "$EXPLORER_URL"/transaction/"$TX_6?tab=utxo"
 ```
-
-    https://preprod.cardanoscan.io/transaction/eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee?tab=utxo
-
+```txt
+https://preprod.cardanoscan.io/transaction/eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee?tab=utxo
+```
 
 The seller now has about an additional 75 ada.
 
@@ -1886,11 +1889,13 @@ The seller now has about an additional 75 ada.
 ```bash
 cardano-cli query utxo --testnet-magic "$CARDANO_TESTNET_MAGIC" --address "$SELLER_ADDR"
 ```
+```txt
 
-                               TxHash                                 TxIx        Amount
-    --------------------------------------------------------------------------------------
-    eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee     0        1073964776 lovelace + TxOutDatumNone
-    eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee     1        1034400 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.53656c6c6572 + TxOutDatumNone
+                           TxHash                                 TxIx        Amount
+--------------------------------------------------------------------------------------
+eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee     0        1073964776 lovelace + TxOutDatumNone
+eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee     1        1034400 lovelace + 1 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072.53656c6c6572 + TxOutDatumNone
+```
 
 
 ## View the withdrawal
@@ -1901,16 +1906,16 @@ Marlowe Runtime\'s `HTTP` `GET` endpoint `/withdrawals/{transactionId}` can fetc
 ```bash
 curl -sS "$MARLOWE_RT_WEBSERVER_URL"/withdrawals/"$TX_6" | json2yaml
 ```
-
-    block:
-      blockHeaderHash: ebe3a661cd9b4799bfcecbcf3ae35fbc4d2ee24bfc7aa67c0a5fb6b250216562
-      blockNo: 757411
-      slotNo: 23980393
-    payouts:
-    - contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
-      payout: e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b#2
-      role: Seller
-      roleTokenMintingPolicyId: 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072
-    status: confirmed
-    withdrawalId: eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
-
+```yaml
+block:
+  blockHeaderHash: ebe3a661cd9b4799bfcecbcf3ae35fbc4d2ee24bfc7aa67c0a5fb6b250216562
+  blockNo: 757411
+  slotNo: 23980393
+payouts:
+- contractId: b224b1873d986a5e34d66e6d86f47aa51aed7d3535b933e31fc9d8f98e742b7c#1
+  payout: e247a0d8cc28973ca01736c56f1c51725210e3b8584687d32f6929c800a8a66b#2
+  role: Seller
+  roleTokenMintingPolicyId: 03e6a02b3cb1db721248de96664a7f92318b17bd5f54657bd8031072
+status: confirmed
+withdrawalId: eb848199e21597df56a45d744f29a4f3a41425c876380f4c58542a296e369cee
+```

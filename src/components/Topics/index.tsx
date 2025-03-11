@@ -90,7 +90,8 @@ function Topics() {
           Blockly <ArrowRight className="arrow" />
         </Link>
       </div>
-        <div className={styles.card}>
+      {/*
+      <div className={styles.card}>
         <div className="card-header">
           <Book />
           <h4>API Reference</h4>
@@ -100,6 +101,7 @@ function Topics() {
           API reference <ArrowRight className="arrow" />
         </Link>
       </div>
+      */}
     </div>
   );
 }

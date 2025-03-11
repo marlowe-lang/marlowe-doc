@@ -24,7 +24,7 @@ The JSON API for Marlowe Pipe contains the following requests and responses.
 
 | Request                             | Response                  |
 |-------------------------------------|---------------------------|
-| [`list`](#list-contracts-ids)       | [`contracts`](#contracts) |
+| [`list`](#list-contract-ids)        | [`contracts`](#contracts) |
 | [`headers`](#list-contract-headers) | [`headers`](#headers)     |
 | [`get`](#get)                       | [`info`](#info)           |
 | [`create`](#create)                 | [`body`](#body)           |
