@@ -1,7 +1,7 @@
 { repoRoot, pkgs, lib,  ... }:
 
 pkgs.buildNpmPackage {
-  pname = "marlowe-website";
+  pname = "marlowe-docs-website";
   version = "0.1.0";
   npmInstallFlags = [ "--include=dev" ];
 

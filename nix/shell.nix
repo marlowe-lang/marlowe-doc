@@ -1,7 +1,7 @@
 { repoRoot, inputs, pkgs, lib, system }:
 
 lib.iogx.mkShell {
-  name = "marlowe-website";
+  name = "marlowe-docs-website";
   
   packages = [
     pkgs.prefetch-npm-deps
@@ -10,7 +10,7 @@ lib.iogx.mkShell {
   ];
 
   scripts.gen-npm-deps-hash = {
-    group = "marlowe-website";
+    group = "marlowe-docs-website";
     description = "Run this whenever package-lock.json changes";
     exec = ''
       cd "$(git rev-parse --show-toplevel)"
