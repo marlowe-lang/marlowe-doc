@@ -18,8 +18,8 @@ participants. Concretely, we represent a transaction as a list of
 `AnyInput`s together with a set of integers representing the set of
 signatories.
 
-As we mentioned in `the previous
-tutorial <marlowe-data>`{.interpreted-text role="ref"}, inputs can have
+As we mentioned in [the previous
+tutorial marlowe-data](./marlowe-data.md), inputs can have
 one out of four kinds: `Commit`, `Pay`, `Choice`, and `Oracle`. Of
 these, `Commit` and `Pay` are considered to be *actions* and are
 typically associated with the transfer of money between a participant
@@ -211,7 +211,7 @@ disallows providing information that is not required.
 
 Other than that, the only thing that Marlowe does when provided with
 `` Choice+`s and  ``+Oracle+`s is to record them in the state so that
-the [+reduce]{.title-ref} function can access them.
+the `reduce` function can access them.
 
 ## Combinators and `Null`
 
@@ -376,7 +376,7 @@ scaleValue divid divis def val = if (divis == 0) then def else ((val * divid) `d
 ```
 
 The process of scaling `` Commit+`s and  ``+Pay+`s is carried out by
-the [+fetchPrimitive]{.title-ref} function.
+the `fetchPrimitive` function.
 
 ``` haskell
 fetchPrimitive idAction blockNum state (Scale divid divis def subContract) =

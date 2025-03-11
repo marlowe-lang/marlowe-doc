@@ -108,7 +108,7 @@ are refunded.
 `Close` is typically the last step in every "path" through a Marlowe
 contract, and its effect is to refund the money in the contract to the
 participants; we will describe this in more detail when we look at 
-[Marlowe step by step](marlowe-step-by-step.md) in a later tutorial. 
+[Marlowe step by step](marlowe-step-by-step.mdx) in a later tutorial. 
 In this particular case, refund will happen at POSIX time `1700003600` 
 (2023-11-14 23:13:20 GMT).
 

@@ -594,14 +594,14 @@ marlowe-cli run prepare \
   --marlowe-file marlowe-1.json \
   --out-file marlowe-2.json
 ```
-
-    Rounding  `TransactionInput` txInterval boundries to:(POSIXTime {getPOSIXTime = 1679661371000},POSIXTime {getPOSIXTime = 1679661731999})
-    TransactionInput {txInterval = (POSIXTime {getPOSIXTime = 1679661371000},POSIXTime {getPOSIXTime = 1679661731999}), txInputs = [NormalInput (IDeposit "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\"" "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\"" (Token "" "") 80000000)]}
-    Payment 1
-      Acccount: "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\""
-      Payee: Party "\"addr_test1vpy4n4peh4suv0y55yptur0066j5kds8r4ncnuzm0vpzfgg0dhz6d\""
-      Ada: Lovelace {getLovelace = 80000000}
-
+```txt
+Rounding  `TransactionInput` txInterval boundries to:(POSIXTime {getPOSIXTime = 1679661371000},POSIXTime {getPOSIXTime = 1679661731999})
+TransactionInput {txInterval = (POSIXTime {getPOSIXTime = 1679661371000},POSIXTime {getPOSIXTime = 1679661731999}), txInputs = [NormalInput (IDeposit "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\"" "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\"" (Token "" "") 80000000)]}
+Payment 1
+  Acccount: "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\""
+  Payee: Party "\"addr_test1vpy4n4peh4suv0y55yptur0066j5kds8r4ncnuzm0vpzfgg0dhz6d\""
+  Ada: Lovelace {getLovelace = 80000000}
+```
 
 Once again, use `marlowe-cli run auto-execute` to build and submit the transaction and then wait for confirmation.
 
@@ -692,7 +692,6 @@ marlowe-cli run prepare \
   --invalid-hereafter "$((`date -u +%s` * SECOND + 5 * MINUTE))" \
   --marlowe-file marlowe-2.json \
   --out-file marlowe-3.json
-```
 
     Rounding  `TransactionInput` txInterval boundries to:(POSIXTime {getPOSIXTime = 1679661602000},POSIXTime {getPOSIXTime = 1679661962999})
     TransactionInput {txInterval = (POSIXTime {getPOSIXTime = 1679661602000},POSIXTime {getPOSIXTime = 1679661962999}), txInputs = [NormalInput (IDeposit "\"addr_test1vpy4n4peh4suv0y55yptur0066j5kds8r4ncnuzm0vpzfgg0dhz6d\"" "\"addr_test1vpy4n4peh4suv0y55yptur0066j5kds8r4ncnuzm0vpzfgg0dhz6d\"" (Token "" "") 85000000)]}
@@ -704,7 +703,7 @@ marlowe-cli run prepare \
       Acccount: "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\""
       Payee: Party "\"addr_test1vqd3yrtjyx49uld43lvwqaf7z4k03su8gf2x4yr7syzvckgfzm4ck\""
       Ada: Lovelace {getLovelace = 2000000}
-
+```
 
 Once again, use `marlowe-cli run auto-execute` to build and submit the transaction and then wait for confirmation.
 

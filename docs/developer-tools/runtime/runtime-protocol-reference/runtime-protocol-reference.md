@@ -137,21 +137,21 @@ Once in that protocol state, the protocol stays there for the rest of the sessio
 | --- | --- | --- | --- |
 | 1. `Init` | `Client` | | The initial state. |
 | 2. `MarloweSync st` | Determined by `st` | | The peers are communicating via the `MarloweSync` sub-protocol. |
-| | | `st` | A protocol state from **[MarloweSync](#1-marlowe-sync-sub-protocol)** |
+| | | `st` | A protocol state from **[MarloweSync](marlowesync-subprotocol.md)** |
 | 3. `MarloweHeaderSync st` | Determined by `st` | | The peers are communicating via the `MarloweHeaderSync` sub-protocol. |
-| | | `st` | A protocol state from **[MarloweHeaderSync](#1-marlowe-header-sync-sub-protocol)** |
+| | | `st` | A protocol state from **[MarloweHeaderSync](marloweheadersync-subprotocol.md)** |
 | 4. `MarloweBulkSync st` | Determined by `st` | | The peers are communicating via the `MarloweBulkSync` sub-protocol. |
-| | | `st` | A protocol state from **[MarloweBulkSync](#1-marlowe-bulk-sync-sub-protocol)** |
+| | | `st` | A protocol state from **[MarloweBulkSync](marlowebulksync-subprotocol.md)** |
 | 5. `MarloweQuery st` | Determined by `st` | | The peers are communicating via the `Query MarloweSyncRequest` sub-protocol. |
-| | | `st` | A protocol state from **[Query MarloweSyncRequest](#1-marlowe-query-sub-protocol)** |
+| | | `st` | A protocol state from **[Query MarloweSyncRequest](marlowequery-subprotocol.md)** |
 | 6. `TxJob st` | Determined by `st` | | The peers are communicating via the `Job MarloweTxCommand` sub-protocol. |
-| | | `st` | A protocol state from **[Job MarloweTxCommand](#1-tx-job-sub-protocol)** |
+| | | `st` | A protocol state from **[Job MarloweTxCommand](txjob-subprotocol.md)** |
 | 7. `MarloweLoad st` | Determined by `st` | | The peers are communicating via the `MarloweLoad` sub-protocol. |
-| | | `st` | A protocol state from **[MarloweLoad](#1-marlowe-load-sub-protocol)** |
+| | | `st` | A protocol state from **[MarloweLoad](marloweload-subprotocol.md)** |
 | 8. `ContractQuery st` | Determined by `st` | | The peers are communicating via the `Query ContractRequest` sub-protocol. |
-| | | `st` | A protocol state from **[Query ContractRequest](#1-contract-query-sub-protocol)** |
+| | | `st` | A protocol state from **[Query ContractRequest](contractquery-subprotocol.md)** |
 | 9. `MarloweTransfer st` | Determined by `st` | | The peers are communicating via the `MarloweTransfer` sub-protocol. |
-| | | `st` | A protocol state from **[MarloweTransfer](#1-marlowe-transfer-sub-protocol)** |
+| | | `st` | A protocol state from **[MarloweTransfer](marlowetransfer-subprotocol.md)** |
 
 
 ### Message types

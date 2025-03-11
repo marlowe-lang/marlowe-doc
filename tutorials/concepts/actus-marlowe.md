@@ -9,7 +9,7 @@ plus examples implemented in Marlowe.
 
 ## ACTUS
 
-The ACTUS Financial Research Foundation -- <https://www.actusfrf.org> -- has
+The ACTUS Financial Research Foundation -- [https://www.actusfrf.org](https://www.actusfrf.org) -- has
 created a standard for financial contracts, categorised by means of a
 [taxonomy](https://www.actusfrf.org/taxonomy) and described in a
 detailed [technical specification](https://www.actusfrf.org/techspecs).
