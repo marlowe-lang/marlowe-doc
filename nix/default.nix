@@ -4,9 +4,9 @@ pkgs.buildNpmPackage {
   pname = "marlowe-docs-website";
   version = "0.1.0";
   npmInstallFlags = [ "--include=dev" ];
+  npmFlags = ["--legacy-peer-deps"];
 
   src = lib.sourceByRegex ../. [
-    #sidebar-tutorial.mjs
     "^docs.*"
     "^docusaurus.config.ts$"
     "^package-lock.json$"
