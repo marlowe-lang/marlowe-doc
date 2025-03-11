@@ -3,19 +3,19 @@ title: Marlowe Playground
 sidebar_position: 1
 ---
 
-In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in **[Marlowe Playground](https://play.marlowe.iohk.io/)** using Blockly.
+In the following video, Pablo Lamela, Marlowe Engineering Lead, shows how to create Marlowe contracts in **[Marlowe Playground](https://playground.marlowe-lang.org/)** using Blockly.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EgCqG0hPmwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen = "true"></iframe>
 
 ## A low-code pathway for building, simulating, and analyzing smart contracts
 
-Intended to be used by both low-code professionals and experienced developers alike, the **[Playground](https://play.marlowe.iohk.io/)** provides multiple methods for building, simulating, and analyzing Marlowe smart contracts in a sandbox environment using an iterative design process.
+Intended to be used by both low-code professionals and experienced developers alike, the **[Playground](https://playground.marlowe-lang.org/)** provides multiple methods for building, simulating, and analyzing Marlowe smart contracts in a sandbox environment using an iterative design process.
 
 Once you have created a contract, you can analyze its behavior through formal verification and testing; for example, you can check whether any payments made by the contract could conceivably fail. You can also step through how your contract will behave, simulating the actions of the participants.
 
 ## Multiple Playground language options for creating Marlowe smart contracts
 
-The **[Playground](https://play.marlowe.iohk.io/)** provides multiple language options for building contracts:
+The **[Playground](https://playground.marlowe-lang.org/)** provides multiple language options for building contracts:
 
 1. Use the Blockly visual drag and drop programming tool to create contracts by fitting together blocks that represent the different components. Blockly is an intuitive low-code tool to get started with building Marlowe smart contracts. 
 
