@@ -7,7 +7,7 @@ const config: Config = {
   tagline: "Peer to peer financial agreements",
   favicon: "img/favicon.ico",
   url: "https://play.marlowe.iohk.io/",
-  baseUrl: "/docs/introduction/",
+  baseUrl: "/",
   organizationName: "marlowe-lang", // Usually your GitHub org/user name.
   projectName: "marlowe-doc", // Usually your repo name.
 
